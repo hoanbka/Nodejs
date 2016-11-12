@@ -1,0 +1,1 @@
+When building a web application in raw Node.js you might use the http class as we have started using Node.js. Back then we only used the response object, but if we are interested what the request was then we should also take a look at the request object we receive in the callback. .ext
