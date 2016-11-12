@@ -5,7 +5,11 @@ var users = [
     {'user': 'tung', 'age': 1},
     {'user': 'barney', 'age': 36},
     {'user': 'fred', 'age': 40},
-    {'user': 'pebbles', 'age': 1}
+    {'user': 'pebbles', 'age': 1},
+    {'user': 'Bush', 'age': 0},
+    {'user': 'John', 'age': 2},
+    {'user': 'Win', 'age': 0}
+    
 ];
 
 var index =[0];
@@ -17,7 +21,11 @@ for( var i=1;i< users.length;i++){
     if(users[i].age<min){
 
         min = users[i].age;
-        index.pop();
+    
+        while(!index.length==0){
+            index.pop();
+        }
+
         index.push(i);
 
     }else if(users[i].age==min){
@@ -30,3 +38,4 @@ console.log(index);
 index.forEach(function(i){
     console.log(users[i]);
 })
+
