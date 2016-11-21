@@ -1,3 +1,9 @@
+/*The async.waterfall() method allows you to pass values between the functions in a trickle-down manner.
+The waterfall() method is useful when you need the results of a previous function to perform an operation with the next 
+function in the series.*/
+
+
+
 var async = require('async');
 
 async.waterfall([
