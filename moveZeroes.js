@@ -8,7 +8,8 @@ Minimize the total number of operations.*/
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 // var nums = [0, 1, 0, 3, 12];
-var nums = [-1, 0, 0, 5, 0, 12, -7, 9];
+// var nums = [-1, 0, 0, 5, 0, 12, -7, 9];
+var nums = [0, 0, -1, 0, 9, 5, -3];
 
 
 var moveZeroes = function(nums) {
@@ -23,10 +24,9 @@ var moveZeroes = function(nums) {
 
                 if (nums[last] === 0) {
                     last--;
-                } else if (nums[last] !== 0) {
+                } else {
 
-                    var temp;
-                    temp = nums[i];
+                    var temp = nums[i];
                     nums[i] = nums[last];
                     nums[last] = temp;
 
@@ -48,7 +48,7 @@ var moveZeroes = function(nums) {
 
     }
 
-   
+
     for (var i = 0; i < index - 1; i++) {
 
         for (var j = i + 1; j < index; j++) {
@@ -69,43 +69,43 @@ console.log(moveZeroes(nums));
 
 
 function moveZeroes_2(nums) {
-        var j = 0;
-        for (var i = 0; i < nums.length; i++) {
-            if (nums[i] != 0) {
-                var temp = nums[j];
-                nums[j++] = nums[i];
-                nums[i] = temp;
-            }
+    var j = 0;
+    for (var i = 0; i < nums.length; i++) {
+        if (nums[i] != 0) {
+            var temp = nums[j];
+            nums[j++] = nums[i];
+            nums[i] = temp;
         }
-        return nums;
+    }
+    return nums;
 }
 
 console.log(moveZeroes_2(nums));
 
 
-function moveZeroes_3( nums) {
-        var x=0;
-        for(var i=0;i<nums.length;i++){
-            if(nums[i]!=0){
-                nums[x++]=nums[i];
-            }
+function moveZeroes_3(nums) {
+    var x = 0;
+    for (var i = 0; i < nums.length; i++) {
+        if (nums[i] != 0) {
+            nums[x++] = nums[i];
         }
-        for(var i=x;i<nums.length;i++){
-            nums[i]=0;
-        }
-        return nums;
+    }
+    for (var i = x; i < nums.length; i++) {
+        nums[i] = 0;
+    }
+    return nums;
 }
 
 console.log(moveZeroes_3(nums));
 
-function moveZeroes_4(nums){
+function moveZeroes_4(nums) {
 
-     var zeroCount = 0;
-    for(var i = 0 ; i< nums.length; i++) {
+    var zeroCount = 0;
+    for (var i = 0; i < nums.length; i++) {
         if (nums[i] == 0) {
             zeroCount++;
-        } else if (zeroCount > 0 ){
-            nums[i-zeroCount] = nums[i];
+        } else if (zeroCount > 0) {
+            nums[i - zeroCount] = nums[i];
             nums[i] = 0;
         }
     }
