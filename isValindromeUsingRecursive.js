@@ -1,27 +1,3 @@
-function helper(check, start, end) {
-	if (start > end) {
-		return true;
-	}
-
-	if (check.charAt(start) != check.charAt(end)) {
-		return false;
-
-	}
-	return helper(check, start + 1, end - 1);
-
-}
-
-function isValid(str) {
-	return helper(str, 0, str.length - 1);
-
-}
-
-
-//TEST
-var test = ["abc", "aabaa", "hello olleh", ""];
-// test.forEach(function(e) {
-// 	console.log(isValid(e));
-// })
 
 //
 var isValid = (function() {
@@ -45,6 +21,9 @@ var isValid = (function() {
 	}
 })();
 
+
+//TEST
+var test = ["abc", "aabaa", "hello olleh", ""];
 test.forEach(function(e) {
 	console.log(isValid.isValid(e));
 })
